@@ -1,0 +1,16 @@
+@import './variable.scss';
+
+body {
+  background-color: $black;
+}
+
+h1 {
+  color: #333fff;
+  font-family: sans-serif;
+}
+
+h2 {
+  font-size: 14px;
+  color: #fff;
+  font-family: sans-serif;
+}

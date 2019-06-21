@@ -5,7 +5,9 @@ const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const handlebars = require('handlebars');
 const gulpHandlebars = require('gulp-handlebars-html')(handlebars);
-
+const minifyCss = require('gulp-minify-css');
+const rename = require("gulp-rename");
+const replace = require('gulp-replace')
 const browserSync = require('browser-sync').create();
 
 const style = () => {
@@ -14,7 +16,9 @@ const style = () => {
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write())
     .pipe(concat('style.css'))
-    .pipe(gulp.dest('./dist/style'));
+    .pipe(minifyCss())
+    .pipe(gulp.dest('./dist/style'))
+    .pipe(browserSync.stream());
 }
 
 const templates = () => {
@@ -24,24 +28,27 @@ const templates = () => {
     ]
   };
 
-  return gulp.src(`./app/*.html`)
+  return gulp.src('./app/*.hbs')
     .pipe(gulpHandlebars({}, options))
+    .pipe(replace(/\uFEFF/ig, ""))
+    .pipe(rename(function (path) {
+      path.extname = ".html";
+    }))
+    .pipe(gulp.src('./app/*.html'))
     .pipe(gulp.dest(`./dist`));
 }
 
 const clear = () => del(['dist/*']);
 
-// const watch = () => {
-//   browserSync.init({
-//     server: {
-//       baseDir: "./src"
-//     }
-//   });
+const watch = () => {
+  browserSync.init({
+    server: "./dist"
+  });
 
-//   gulp.watch('./src/**/*.html', templates);
-//   gulp.watch('./src/**/*.templates').on('change', browserSync.reload);
-// }
+  gulp.watch('./app/*.hbs', templates).on('all', browserSync.reload);
+  gulp.watch('./app/styles/*.scss', style);
+}
 
-// gulp.task('watch', watch);
 gulp.task('clear', clear);
-gulp.task('build', gulp.series(clear, gulp.series(style, templates)));
+gulp.task('build', gulp.series(clear, style, templates));
+gulp.task('watch', gulp.series(['build'] ,watch));
