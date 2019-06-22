@@ -1,0 +1,48 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+*::-moz-focus-inner {
+  border: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  outline: none;
+  padding: 0;
+
+  &:hover, &:active, &:focus {
+    outline: none;
+  }
+}
+
+a {
+  &:hover, &active, &:focus {
+    outline: none;
+  }
+}
+
+input {
+  border: 0;
+  padding: 0;
+  outline: 0;
+
+  &::-moz-focus-outer, &::-moz-focus-inner  {
+    border: 0;
+    padding: 0;
+    outline: 0;
+  }
+}

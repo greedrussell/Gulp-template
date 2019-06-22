@@ -54,11 +54,15 @@ const scripts = () => {
   return browserify({
     basedir: '.',
     debug: true,
-    entries: ['app/js/main.ts'],
+    entries: ['app/js/index.ts'],
     cache: {},
     packageCache: {}
   })
     .plugin(tsify)
+    .transform('babelify', {
+      presets: ['es2015'],
+      extensions: ['.ts']
+    })
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(buffer())
@@ -82,5 +86,5 @@ const watch = () => {
 }
 
 gulp.task('clear', clear);
-gulp.task('build', gulp.series(clear, style, templates, scripts));
+gulp.task('build', gulp.series(clear, style, templates, scripts, img));
 gulp.task('watch', gulp.series(['build'] ,watch));
