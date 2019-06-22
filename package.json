@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.7",
+    "browserify": "^16.2.3",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
@@ -19,7 +20,13 @@
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "handlebars": "^4.1.2"
+    "gulp-tinypng": "^1.0.2",
+    "gulp-uglify": "^3.0.2",
+    "handlebars": "^4.1.2",
+    "tsify": "^4.0.1",
+    "typescript": "^3.5.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {}
 }
