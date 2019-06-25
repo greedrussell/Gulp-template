@@ -15,11 +15,14 @@ const source = require('vinyl-source-stream');
 const tsify = require("tsify");
 const uglify = require('gulp-uglify');
 const buffer = require('vinyl-buffer');
+const tildeImporter = require('node-sass-tilde-importer');
 
 const style = () => {
   return gulp.src('./app/styles/**/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({
+      importer: tildeImporter
+    }).on('error', sass.logError))
     .pipe(concat('style.css'))
     .pipe(minifyCss())
     .pipe(sourcemaps.write())

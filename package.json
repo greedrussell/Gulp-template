@@ -26,6 +26,7 @@
     "gulp-tinypng": "^1.0.2",
     "gulp-uglify": "^3.0.2",
     "handlebars": "^4.1.2",
+    "node-sass-tilde-importer": "^1.0.2",
     "tsify": "^4.0.1",
     "typescript": "^3.5.2",
     "vinyl-buffer": "^1.0.1",
