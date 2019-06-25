@@ -4,13 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <style>
-    html, body {
-      margin: 0;
-      height: 0;
-    }
-  </style>
+  <title>Login</title>
   <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
@@ -21,16 +15,28 @@
           <div class="LoginForm__wrapper">
             <div class="LoginForm__bg"></div>
             <div class="LoginForm__inner">
-              {{> headline }}
-              {{> logo }}
-              <!-- input 1 -->
-              {{> input }}
-              <!-- # input 1 -->
-              <!-- input 2 -->
-              {{> input }}
-              <!-- # input 2 -->
-              {{> final-line }}
-              {{> button }}
+              <div class="LoginForm__headline flex">
+                <img src="./img/back-arrow.png" alt="" class="LoginForm__headline__back-icon">
+                <p class="LoginForm__headline__text">вернуться</p>
+              </div>
+              <form action="" class="LoginForm__form">
+                <div class="LoginForm__logo">
+                  <img src="./img/rabbit.png" alt="" class="LoginForm__logo__img img-responsive">
+                </div>
+                <div class="LoginForm__input">
+                  {{> input type="text" placeholder="Номер телефона"}}
+                </div>
+                <div class="LoginForm__input">
+                  {{> input type="password" placeholder="Пароль"}}
+                </div>
+                <div class="LoginForm__final-line flex">
+                  {{> checkbox text="Запомнить"}}
+                  <a href="" class="LoginForm__final-line__link">Забыли пароль</a>
+                </div>
+                <div class="LoginForm__btn">
+                  {{> button text="ВОЙТИ"}}
+                </div>
+              </form>
             </div>
           </div>
         </div>

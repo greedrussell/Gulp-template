@@ -46,7 +46,7 @@ const templates = () => {
 
 const img = () => {
   return gulp.src(['./app/img/*.png', './app/img/*.jpg', './app/img/*.jpeg'])
-    .pipe(tinypng('vjHI7U1qQ6WhgGjqRJcY40ZmQYSzjm36'))
+    // .pipe(tinypng('vjHI7U1qQ6WhgGjqRJcY40ZmQYSzjm36'))
     .pipe(gulp.dest('dist/img'));
 }
 
@@ -73,15 +73,15 @@ const scripts = () => {
     .pipe(browserSync.stream());
 }
 
-const clear = () => del(['dist/*']);
+const clear = () => del(['dist/*', './.gulp']);
 
 const watch = () => {
   browserSync.init({
     server: "./dist"
   });
 
-  gulp.watch('./app/*.hbs', templates).on('all', browserSync.reload);
-  gulp.watch('./app/styles/*.scss', style);
+  gulp.watch(['./app/*.hbs', './app/partials/*.hbs'], templates).on('all', browserSync.reload);
+  gulp.watch(['./app/styles/*.scss', './app/styles/**/*.scss'], style);
   gulp.watch('./app/js/*.ts', scripts);
 }
 
