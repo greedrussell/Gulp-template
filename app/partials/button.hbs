@@ -1,1 +1,5 @@
-<button class="btn">{{ text }}</button>
+{{#if isDisabled}}
+  <button class="btn" disabled>{{ text }}</button>
+{{else}}
+  <button class="btn">{{ text }}</button>
+{{/if}}

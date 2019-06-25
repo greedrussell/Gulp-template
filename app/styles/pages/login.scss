@@ -27,7 +27,7 @@
   &__wrapper {
     position: relative;
     overflow: hidden;
-    height: 445px;
+    height: 436px;
     mix-blend-mode: normal;
     border-radius: 4px;
     box-shadow: 0px 2px 32px rgba(0, 0, 0, 0.5);
@@ -70,8 +70,12 @@
     &__text {
       color: rgba(255, 255, 255, 0.8);
       padding-left: 8px;
-      font-weight: 400;
-      font-family: 'HelveticaNeue';
+      font-size: 10px;
+      line-height: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      bottom: -2px;
     }
   }
 
@@ -94,15 +98,23 @@
   
   &__final-line {
     max-width: 370px;
-    margin: 18px auto 23px;
+    margin: 19px auto 24px;
     padding: 0 15px;
     box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
+
+    &__link {
+      font-size: 16px;
+      line-height: 19px;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      position: relative;
+      top: 1px;
+    }
   }
 
   &__btn {
-    margin: 0 auto;
+    margin: 0 auto 16px;
     display: table;
   }
 }

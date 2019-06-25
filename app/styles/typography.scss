@@ -2,39 +2,18 @@
 
 html {
   font-size: 100%;
-  font-weight: $accent-font;
+  font-family: $accent-font;
+  font-weight: normal;
 }
 
-h1, h2, h3, h4, h5, p, a, button {
+p, a, button {
   margin: 0;
-  font-weight: normal;
-  font-family: $accent-font;
 }
 
 p, a {
   font-size: 14px;
   line-height: 1.4;
   letter-spacing: 0.35px;
-}
-
-h1 {
-  font-size: 32px;
-
-  @media(min-width: $tablet) {
-    font-size: 64px;
-  }
-}
-
-h2 {
-  font-size: 22px;
-
-  @media(min-width: $tablet) {
-    font-size: 32px;
-  }
-}
-
-h3 {
-  font-size: 24px;
 }
 
 a, button {
@@ -53,9 +32,5 @@ a {
 button {
   cursor: pointer;
   margin: 0;
-  border-radius: 2px;
-}
-
-label {
-  font-family: Lato,sans-serif;
+  font-weight: 500;
 }
