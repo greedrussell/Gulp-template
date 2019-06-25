@@ -2,9 +2,11 @@
 
 @import './fonts';
 @import './reset';
-@import './typography';
 @import './variable';
+@import './typography';
 @import './button';
+
+@import './pages/login';
 
 .flex {
   display: flex;

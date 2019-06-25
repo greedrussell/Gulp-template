@@ -1,4 +1,4 @@
-@import '../variable.scss';
+@import '../variable';
 
 .LoginForm {
   background-image: url(../img/form-login__bg.png);
@@ -70,6 +70,8 @@
     &__text {
       color: rgba(255, 255, 255, 0.8);
       padding-left: 8px;
+      font-weight: 400;
+      font-family: 'HelveticaNeue';
     }
   }
 

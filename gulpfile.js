@@ -53,6 +53,11 @@ const img = () => {
     .pipe(gulp.dest('dist/img'));
 }
 
+const fonts = () => {
+  return gulp.src('./app/fonts/*.ttf').
+    pipe(gulp.dest('./dist/fonts'));
+}
+
 const scripts = () => {
   return browserify({
     basedir: '.',
@@ -89,5 +94,5 @@ const watch = () => {
 }
 
 gulp.task('clear', clear);
-gulp.task('build', gulp.series(clear, style, templates, scripts, img));
+gulp.task('build', gulp.series(clear, style, templates, scripts, fonts, img));
 gulp.task('watch', gulp.series(['build'] ,watch));
