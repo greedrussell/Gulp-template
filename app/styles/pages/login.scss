@@ -94,6 +94,64 @@
 
   &__input {
     margin-bottom: 15px;
+    position: relative;
+
+    &.focus {
+      & .Form-input__row {
+        background-color: $white;
+      }
+
+      & .Form-input__row__label {
+        color: rgba(0, 0, 0, 0.4);
+      }
+
+      &.valid {
+        & .Form-input__row__label,
+        & .phone-mask > i {
+          color: rgba(0, 0, 0, 0);
+        }
+
+        & .Form-input__row__input {
+          color: $black;
+        }
+      }
+
+      &.empty {
+        & .Form-input__row__label {
+          color: rgba(0, 0, 0, 0.4);
+        }
+      }
+    }
+
+    &.invalid {
+      & .Form-input__row {
+        background-color: $white;
+      }
+      
+      & .Form-input__row__input,
+      & .Form-input__row__label {
+        color: $red;
+      }
+
+      & .Form-input__icons__icon--invalid {
+        opacity: 1;
+      }
+    }
+
+    &.valid {
+      & .Form-input__row__label,
+      & .phone-mask > i {
+        color: rgba(0, 0, 0, 0);
+      }
+
+      & .Form-input__row__input {
+        color: $white;
+      }
+
+      & .Form-input__icons__icon--valid {
+        opacity: 1;
+      }
+    }
   }
   
   &__final-line {

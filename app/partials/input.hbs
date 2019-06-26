@@ -1,4 +1,11 @@
 <div class="Form-input" data-name="workPosition">
+  {{#if icons}}
+    <div class="Form-input__icons">
+      <i class="Form-input__icons__icon Form-input__icons__icon--invalid">!</i>
+      <i class="Form-input__icons__icon Form-input__icons__icon--valid"></i>
+    </div>
+  {{/if}}
+  
   <div class="Form-input__row">
     <label class="Form-input__row__label">{{ placeholder }}</label>
     <input class="Form-input__row__input" type="{{ type }}" />

@@ -2,6 +2,9 @@
 
 node_modules/
 dist/
-app/js/*.ts
+
+app/js/old.ts
+app/js/phone-mask.service.ts
 
 .gulp/
+TASK.md

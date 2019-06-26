@@ -14,14 +14,6 @@
     overflow: hidden;
     box-sizing: border-box;
 
-    &.active {
-      background-color: $white;
-    }
-
-    &.active &__label {
-      color: rgba(0, 0, 0, 0.4);
-    }
-
     &__label {
       position: absolute;
       width: 100%;
@@ -41,6 +33,44 @@
       box-sizing: border-box;
       z-index: 1;
       position: relative;
+      text-align: center;
+      font-size: 18px;
+      line-height: 21px;
+      letter-spacing: 1px;
+    }
+  }
+
+  &__icons {
+    &__icon {
+      position: absolute;
+      font-style: normal;
+      opacity: 0;
+      z-index: 10;
+
+      &--invalid {
+        width: 32px;
+        height: 32px;
+        right: 10px;
+        top: 8px;
+        background: #B40000;
+        border-radius: 50%;
+        text-align: center;
+        padding-top: 9px;
+        box-sizing: border-box;
+        font-weight: 500;
+        color: #fff;
+      }
+
+      &--valid {
+        width: 18px;
+        height: 17px;
+        right: 23px;
+        top: 14px;
+        background-image: url(../img/valid.png);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+      }
     }
   }
 }
